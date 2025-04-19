@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.EcommerceWithFirebase" parent="Theme.Material3.Light.NoActionBar">
+
+    </style>
+
+    <style name="Theme.EcommerceWithFirebase" parent="Base.Theme.EcommerceWithFirebase" />
+    <style name="MainActvityTheme" parent="Theme.EcommerceWithFirebase">
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:colorPrimary">@color/praimary_color</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimaryDark">@color/praimary_color</item>
+        <item name="android:windowBackground">@drawable/launch_backgroud</item>
+        <item name="windowSplashScreenBackground">@drawable/launch_backgroud</item>
+    </style>
+</resources>
