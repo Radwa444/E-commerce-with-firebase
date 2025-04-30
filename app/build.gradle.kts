@@ -7,6 +7,7 @@ android {
     namespace = "com.example.e_commercewithfirebase"
     compileSdk = 35
 
+
     defaultConfig {
         applicationId = "com.example.e_commercewithfirebase"
         minSdk = 26
@@ -47,6 +48,8 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
-    implementation("androidx.core:core-splashscreen:1.0.1")
+    implementation(libs.androidx.core.splashscreen)
+
+
 
 }
