@@ -58,6 +58,13 @@ dependencies {
     implementation("com.google.firebase:firebase-crashlytics")
 
 
+    //packages
+    implementation ("com.github.pwittchen:reactivenetwork-rx2:3.0.8")
+
+
+    //dependency coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
+
 
 
 }
