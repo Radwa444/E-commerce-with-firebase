@@ -25,10 +25,7 @@ class MainActivity : AppCompatActivity() {
    findViewById<Button>(R.id.buttonA).setOnClickListener {
       lifecycleScope.launch{
       delay(3000)
-          Log.d(TAG, CrashlyticsUtils.test(7).toString())
-          Log.d(TAG, CrashlyticsUtils.test("Radwa ii").toString())
-          Log.d(TAG, CrashlyticsUtils.test(7.7).toString())
-          CrashlyticsUtils.test(4)
+
       }
    }
     }
