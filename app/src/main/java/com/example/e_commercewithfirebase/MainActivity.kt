@@ -1,5 +1,6 @@
 package com.example.e_commercewithfirebase
 import android.animation.ObjectAnimator
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -11,27 +12,33 @@ import androidx.core.animation.doOnEnd
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.lifecycleScope
 import com.example.e_commercewithfirebase.Utils.CrashlyticsUtils
+import com.example.e_commercewithfirebase.databinding.ActivityMainBinding
+import com.example.e_commercewithfirebase.ui.auth.AuthActivity
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
+private lateinit var  binding: ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
       installSplashScreen()
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding= ActivityMainBinding.inflate(layoutInflater)
+        val view: View=binding.root
+        setContentView(view)
         initInstallSplashScreen()
-   findViewById<Button>(R.id.buttonA).setOnClickListener {
-      lifecycleScope.launch{
-      delay(3000)
-          Log.d(TAG, CrashlyticsUtils.test(7).toString())
-          Log.d(TAG, CrashlyticsUtils.test("Radwa ii").toString())
-          Log.d(TAG, CrashlyticsUtils.test(7.7).toString())
-          CrashlyticsUtils.test(4)
-      }
-   }
+        onClickButton()
     }
+
+    private fun onClickButton() {
+        binding.buttonA.setOnClickListener {
+            val intent = Intent(this, AuthActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
     private fun initInstallSplashScreen() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             installSplashScreen()
