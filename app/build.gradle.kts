@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     id("com.google.gms.google-services")
     id("com.google.firebase.crashlytics")
+    kotlin("kapt")
 }
 
 android {
@@ -36,6 +37,12 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    buildFeatures {
+        //noinspection DataBindingWithoutKapt
+        dataBinding = true
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -52,12 +59,25 @@ dependencies {
     implementation(libs.androidx.navigation.ui)
     implementation(libs.androidx.core.splashscreen)
 
-    //firebase dependencies
+    // Firebase
     implementation(platform("com.google.firebase:firebase-bom:33.13.0"))
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-crashlytics")
 
+    // Coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+
+    // Reactive Network
+    implementation("com.github.pwittchen:reactivenetwork-rx2:3.0.8")
+
+    // Tests
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
 
 
+    //DataStore
+    implementation("androidx.datastore:datastore-preferences:1.1.6")
+    implementation("androidx.datastore:datastore:1.1.6")
 
 }
